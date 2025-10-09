@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class InventoryController extends AbstractController
 {
-    #[Route('/inventory', name: 'api_inventory')]
+    #[Route('/api/inventory', name: 'api_inventory')]
     public function index(): JsonResponse
     {
         return $this->json([

@@ -16,6 +16,10 @@ final class InventoryController extends AbstractController
                 'name' => 'Apple iPhone 17 Pro Max',
                 'inventory' => 14,
             ],
+            [
+                'name' => 'Samsung Galaxy S25+',
+                'inventory' => 21,
+            ],
         ]);
     }
 }

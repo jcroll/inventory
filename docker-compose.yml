@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: inventory-api
+    ports:
+      - "80:80"
+    volumes:
+      - ./api:/app
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public

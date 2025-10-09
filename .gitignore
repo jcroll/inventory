@@ -1,0 +1,8 @@
+# IDE-specific files (example for popular IDEs)
+.idea/
+.vscode/
+*.iml
+
+# Operating system specific files
+.DS_Store
+Thumbs.db

@@ -7,16 +7,21 @@
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "drenso/symfony-oidc-bundle": "^4.2",
         "symfony/console": "6.4.*",
         "symfony/dotenv": "6.4.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.4.*",
+        "symfony/http-client": "6.4.*",
         "symfony/runtime": "6.4.*",
         "symfony/security-bundle": "6.4.*",
+        "symfony/var-dumper": "6.4.*",
         "symfony/yaml": "6.4.*"
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.64"
+        "symfony/debug-bundle": "6.4.*",
+        "symfony/maker-bundle": "^1.64",
+        "symfony/web-profiler-bundle": "6.4.*"
     },
     "config": {
         "allow-plugins": {

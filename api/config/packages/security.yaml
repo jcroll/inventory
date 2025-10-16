@@ -21,11 +21,15 @@ security:
             pattern: ^/
             oidc:
               user_identifier_property: preferred_username
+              enable_end_session_listener: true
             access_token:
                 token_handler:
                     oidc_user_info:
                         base_uri: '%keycloak.url%/realms/master/protocol/openid-connect/userinfo'
                         claim: preferred_username
+            logout:
+                path: /logout
+
     access_control:
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/login_check, roles: PUBLIC_ACCESS }

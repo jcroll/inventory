@@ -2287,6 +2287,8 @@ n80uk	26.4.0	1760023286
 --
 
 COPY public.offline_client_session (user_session_id, client_id, offline_flag, "timestamp", data, client_storage_provider, external_client_id, version) FROM stdin;
+3cf51680-0cb3-b34e-3bb5-ea760f7e89b3	9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be	0	1760707988	{"authMethod":"openid-connect","redirectUri":"http://localhost:8080/admin/master/console/","notes":{"clientId":"9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be","iss":"http://localhost:8080/realms/master","startedAt":"1760707891","response_type":"code","level-of-authentication":"-1","code_challenge_method":"S256","nonce":"3581033b-ec8b-41c4-a842-11be8d0d153e","response_mode":"query","scope":"openid","userSessionStartedAt":"1760707891","redirect_uri":"http://localhost:8080/admin/master/console/","state":"933ed1bd-f78b-4629-8ba4-7d30f38a77f9","code_challenge":"NRGXf5HrvUANIgHMZF3Cj4OqRL1QQ6HpqbWp0BpZk4g"}}	local	local	1
+8460c54f-27c4-538b-47f2-9720561f667f	e5ac5e77-0380-4734-9b8f-82e72c6205a0	0	1760708014	{"authMethod":"openid-connect","redirectUri":"http://localhost/login_check","notes":{"clientId":"e5ac5e77-0380-4734-9b8f-82e72c6205a0","scope":"openid","userSessionStartedAt":"1760708014","iss":"http://localhost:8080/realms/master","startedAt":"1760708014","response_type":"code","level-of-authentication":"-1","redirect_uri":"http://localhost/login_check","state":"4b419bd4074a7b383f3c20c49b82b56c","nonce":"147a77df239d84f6e57c0de9d3d08524"}}	local	local	0
 \.
 
 
@@ -2295,6 +2297,8 @@ COPY public.offline_client_session (user_session_id, client_id, offline_flag, "t
 --
 
 COPY public.offline_user_session (user_session_id, user_id, realm_id, created_on, offline_flag, data, last_session_refresh, broker_session_id, version) FROM stdin;
+3cf51680-0cb3-b34e-3bb5-ea760f7e89b3	9ad1bd18-e889-409c-be96-3250537bd27f	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	1760707891	0	{"ipAddress":"192.168.65.1","authMethod":"openid-connect","rememberMe":false,"started":0,"notes":{"KC_DEVICE_NOTE":"eyJpcEFkZHJlc3MiOiIxOTIuMTY4LjY1LjEiLCJvcyI6Ik1hYyBPUyBYIiwib3NWZXJzaW9uIjoiMTAuMTUuNyIsImJyb3dzZXIiOiJDaHJvbWUvMTQxLjAuMCIsImRldmljZSI6Ik1hYyIsImxhc3RBY2Nlc3MiOjAsIm1vYmlsZSI6ZmFsc2V9","AUTH_TIME":"1760707891","authenticators-completed":"{\\"7524f5ee-7d85-4ab5-9478-f5c7dd9d7408\\":1760707891}"},"state":"LOGGED_IN"}	1760707988	\N	1
+8460c54f-27c4-538b-47f2-9720561f667f	077a693b-dcd7-4395-a0d1-f2a5237cb9f9	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	1760708014	0	{"ipAddress":"192.168.65.1","authMethod":"openid-connect","rememberMe":false,"started":0,"notes":{"KC_DEVICE_NOTE":"eyJpcEFkZHJlc3MiOiIxOTIuMTY4LjY1LjEiLCJvcyI6Ik1hYyBPUyBYIiwib3NWZXJzaW9uIjoiMTAuMTUuNyIsImJyb3dzZXIiOiJDaHJvbWUvMTQxLjAuMCIsImRldmljZSI6Ik1hYyIsImxhc3RBY2Nlc3MiOjAsIm1vYmlsZSI6ZmFsc2V9","AUTH_TIME":"1760708014","authenticators-completed":"{\\"7524f5ee-7d85-4ab5-9478-f5c7dd9d7408\\":1760708014}"},"state":"LOGGED_IN"}	1760708014	\N	0
 \.
 
 
@@ -2589,7 +2593,7 @@ ea780ce4-50ac-492e-805e-74ac170f3fd9	String	jsonType.label
 --
 
 COPY public.realm (id, access_code_lifespan, user_action_lifespan, access_token_lifespan, account_theme, admin_theme, email_theme, enabled, events_enabled, events_expiration, login_theme, name, not_before, password_policy, registration_allowed, remember_me, reset_password_allowed, social, ssl_required, sso_idle_timeout, sso_max_lifespan, update_profile_on_soc_login, verify_email, master_admin_client, login_lifespan, internationalization_enabled, default_locale, reg_email_as_username, admin_events_enabled, admin_events_details_enabled, edit_username_allowed, otp_policy_counter, otp_policy_window, otp_policy_period, otp_policy_digits, otp_policy_alg, otp_policy_type, browser_flow, registration_flow, direct_grant_flow, reset_credentials_flow, client_auth_flow, offline_session_idle_timeout, revoke_refresh_token, access_token_life_implicit, login_with_email_allowed, duplicate_emails_allowed, docker_auth_flow, refresh_token_max_reuse, allow_user_managed_access, sso_max_lifespan_remember_me, sso_idle_timeout_remember_me, default_role) FROM stdin;
-17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	60	300	60	\N	\N	\N	t	f	0	\N	master	0	\N	f	f	f	f	EXTERNAL	1800	36000	f	f	1c878a59-a322-4371-af0e-27aeb921ae71	1800	f	\N	f	f	f	f	0	1	30	6	HmacSHA1	totp	7d23c3e4-e6d2-407e-a751-384cdfa45ba0	23c085dd-b3f8-40ea-8b2f-8f2efdb0b108	5a703da1-1a27-4a50-bb7c-27f1ec7fd7a3	0514e74e-880e-419b-9660-dd916072e9f1	6c3bda06-ca34-43ea-8d44-9a4ae49d872e	2592000	f	900	t	f	0e24b5d8-5c42-425b-8218-1e70a55a21c5	0	f	0	0	6be5efd6-28a6-427f-9d76-754fcd286da4
+17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	60	300	7200	\N	\N	\N	t	f	0	\N	master	0	\N	f	f	f	f	EXTERNAL	1800	36000	f	f	1c878a59-a322-4371-af0e-27aeb921ae71	1800	f	\N	f	f	f	f	0	1	30	6	HmacSHA1	totp	7d23c3e4-e6d2-407e-a751-384cdfa45ba0	23c085dd-b3f8-40ea-8b2f-8f2efdb0b108	5a703da1-1a27-4a50-bb7c-27f1ec7fd7a3	0514e74e-880e-419b-9660-dd916072e9f1	6c3bda06-ca34-43ea-8d44-9a4ae49d872e	2592000	f	900	t	f	0e24b5d8-5c42-425b-8218-1e70a55a21c5	0	f	0	0	6be5efd6-28a6-427f-9d76-754fcd286da4
 \.
 
 
@@ -2658,6 +2662,11 @@ webAuthnPolicyCreateTimeoutPasswordless	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	0
 webAuthnPolicyAvoidSameAuthenticatorRegisterPasswordless	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	false
 client-policies.profiles	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	{"profiles":[]}
 client-policies.policies	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	{"policies":[]}
+shortVerificationUri	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	
+actionTokenGeneratedByUserLifespan.verify-email	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	
+actionTokenGeneratedByUserLifespan.idp-verify-account-via-email	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	
+actionTokenGeneratedByUserLifespan.reset-credentials	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	
+actionTokenGeneratedByUserLifespan.execute-actions	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	
 \.
 
 

@@ -1563,6 +1563,7 @@ c28ad97d-fcd9-4c4f-a97d-88940e12fe1c	t	f	broker	0	f	\N	\N	t	\N	f	17a1deaa-57e1-4
 9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be	t	t	security-admin-console	0	t	\N	/admin/master/console/	f	\N	f	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	openid-connect	0	f	f	${client_security-admin-console}	f	client-secret	${authAdminUrl}	\N	\N	t	f	f	f
 8e3f9b65-cea8-4f99-912c-f3893123a855	t	t	admin-cli	0	t	\N	\N	f	\N	f	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	openid-connect	0	f	f	${client_admin-cli}	f	client-secret	\N	\N	\N	f	f	t	f
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	t	t	inventory-api	0	f	8i5AB4DBWh43PusXdW60vFObY129P25C		f		f	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	openid-connect	-1	t	f		t	client-secret			\N	t	f	f	f
+3bd14e5c-a020-4c16-8391-88a58a57d970	t	t	inventory-widget	0	t	\N		f		f	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	openid-connect	-1	t	f		f	client-secret			\N	t	f	f	f
 \.
 
 
@@ -1585,6 +1586,12 @@ e5ac5e77-0380-4734-9b8f-82e72c6205a0	oidc.ciba.grant.enabled	false
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	dpop.bound.access.tokens	false
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	backchannel.logout.session.required	true
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	backchannel.logout.revoke.offline.tokens	false
+3bd14e5c-a020-4c16-8391-88a58a57d970	standard.token.exchange.enabled	false
+3bd14e5c-a020-4c16-8391-88a58a57d970	oauth2.device.authorization.grant.enabled	false
+3bd14e5c-a020-4c16-8391-88a58a57d970	oidc.ciba.grant.enabled	false
+3bd14e5c-a020-4c16-8391-88a58a57d970	dpop.bound.access.tokens	false
+3bd14e5c-a020-4c16-8391-88a58a57d970	backchannel.logout.session.required	true
+3bd14e5c-a020-4c16-8391-88a58a57d970	backchannel.logout.revoke.offline.tokens	false
 \.
 
 
@@ -1759,6 +1766,17 @@ e5ac5e77-0380-4734-9b8f-82e72c6205a0	03b46025-5606-4b58-a929-71d558b648ed	f
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	38b67e0c-5fad-4222-ae5d-cb3526a609b1	f
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	248a2371-2165-4044-8137-0519d59e5886	f
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	1a9a525b-e62b-404c-8702-1ee11b0a777d	t
+3bd14e5c-a020-4c16-8391-88a58a57d970	decb4212-910c-4978-9bfb-925cb3297fcd	t
+3bd14e5c-a020-4c16-8391-88a58a57d970	4085e9c9-2afd-43c2-bb92-9f05acfca8c2	t
+3bd14e5c-a020-4c16-8391-88a58a57d970	5ac564c1-8b3f-409a-b377-e8b369a720a7	t
+3bd14e5c-a020-4c16-8391-88a58a57d970	22c9d427-c3f9-4b30-855f-2842902cc1ce	t
+3bd14e5c-a020-4c16-8391-88a58a57d970	ee4f5a6c-6053-48f7-8592-b32470c3ce73	t
+3bd14e5c-a020-4c16-8391-88a58a57d970	0d3669fd-518e-4141-a884-4e1fe86474d6	t
+3bd14e5c-a020-4c16-8391-88a58a57d970	3ec72451-66b5-47f5-969e-447b359fe8dc	f
+3bd14e5c-a020-4c16-8391-88a58a57d970	b85dec55-1c32-4e07-822d-74367c54c667	f
+3bd14e5c-a020-4c16-8391-88a58a57d970	03b46025-5606-4b58-a929-71d558b648ed	f
+3bd14e5c-a020-4c16-8391-88a58a57d970	38b67e0c-5fad-4222-ae5d-cb3526a609b1	f
+3bd14e5c-a020-4c16-8391-88a58a57d970	248a2371-2165-4044-8137-0519d59e5886	f
 \.
 
 
@@ -2279,6 +2297,7 @@ eac3b840-62e5-41de-b136-891547d62264	1c878a59-a322-4371-af0e-27aeb921ae71	t	${ro
 
 COPY public.migration_model (id, version, update_time) FROM stdin;
 n80uk	26.4.0	1760023286
+51tby	26.4.1	1761142757
 \.
 
 
@@ -2289,6 +2308,8 @@ n80uk	26.4.0	1760023286
 COPY public.offline_client_session (user_session_id, client_id, offline_flag, "timestamp", data, client_storage_provider, external_client_id, version) FROM stdin;
 3cf51680-0cb3-b34e-3bb5-ea760f7e89b3	9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be	0	1760707988	{"authMethod":"openid-connect","redirectUri":"http://localhost:8080/admin/master/console/","notes":{"clientId":"9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be","iss":"http://localhost:8080/realms/master","startedAt":"1760707891","response_type":"code","level-of-authentication":"-1","code_challenge_method":"S256","nonce":"3581033b-ec8b-41c4-a842-11be8d0d153e","response_mode":"query","scope":"openid","userSessionStartedAt":"1760707891","redirect_uri":"http://localhost:8080/admin/master/console/","state":"933ed1bd-f78b-4629-8ba4-7d30f38a77f9","code_challenge":"NRGXf5HrvUANIgHMZF3Cj4OqRL1QQ6HpqbWp0BpZk4g"}}	local	local	1
 8460c54f-27c4-538b-47f2-9720561f667f	e5ac5e77-0380-4734-9b8f-82e72c6205a0	0	1760708014	{"authMethod":"openid-connect","redirectUri":"http://localhost/login_check","notes":{"clientId":"e5ac5e77-0380-4734-9b8f-82e72c6205a0","scope":"openid","userSessionStartedAt":"1760708014","iss":"http://localhost:8080/realms/master","startedAt":"1760708014","response_type":"code","level-of-authentication":"-1","redirect_uri":"http://localhost/login_check","state":"4b419bd4074a7b383f3c20c49b82b56c","nonce":"147a77df239d84f6e57c0de9d3d08524"}}	local	local	0
+cf24cb66-7408-c988-9171-8225baa56254	3bd14e5c-a020-4c16-8391-88a58a57d970	0	1761143496	{"authMethod":"openid-connect","redirectUri":"http://localhost:3000","notes":{"clientId":"3bd14e5c-a020-4c16-8391-88a58a57d970","scope":"openid","userSessionStartedAt":"1761143229","iss":"http://localhost:8080/realms/master","startedAt":"1761143229","response_type":"code","level-of-authentication":"-1","code_challenge_method":"S256","redirect_uri":"http://localhost:3000","state":"5c2ffb5e251546a5925648c6ceead13a","code_challenge":"v-QwKQBNqP8PdEFJr6fIUYhoz9UodDOKgN2w59t3wFI","SSO_AUTH":"true"}}	local	local	4
+cf24cb66-7408-c988-9171-8225baa56254	9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be	0	1761143230	{"authMethod":"openid-connect","redirectUri":"http://localhost:8080/admin/master/console/#/master/clients/3bd14e5c-a020-4c16-8391-88a58a57d970/settings","notes":{"clientId":"9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be","iss":"http://localhost:8080/realms/master","startedAt":"1761143230","response_type":"code","level-of-authentication":"-1","code_challenge_method":"S256","nonce":"97ae13a5-c339-4538-9934-6a383b0933f2","response_mode":"query","scope":"openid","SSO_AUTH":"true","userSessionStartedAt":"1761143229","redirect_uri":"http://localhost:8080/admin/master/console/#/master/clients/3bd14e5c-a020-4c16-8391-88a58a57d970/settings","state":"caed244d-7962-451e-ad63-a20eaccae839","code_challenge":"-nHBcy4L51S_6cWW0Yv1DMyIuV76QymgRMFnRpZryo8"}}	local	local	0
 \.
 
 
@@ -2299,6 +2320,7 @@ COPY public.offline_client_session (user_session_id, client_id, offline_flag, "t
 COPY public.offline_user_session (user_session_id, user_id, realm_id, created_on, offline_flag, data, last_session_refresh, broker_session_id, version) FROM stdin;
 3cf51680-0cb3-b34e-3bb5-ea760f7e89b3	9ad1bd18-e889-409c-be96-3250537bd27f	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	1760707891	0	{"ipAddress":"192.168.65.1","authMethod":"openid-connect","rememberMe":false,"started":0,"notes":{"KC_DEVICE_NOTE":"eyJpcEFkZHJlc3MiOiIxOTIuMTY4LjY1LjEiLCJvcyI6Ik1hYyBPUyBYIiwib3NWZXJzaW9uIjoiMTAuMTUuNyIsImJyb3dzZXIiOiJDaHJvbWUvMTQxLjAuMCIsImRldmljZSI6Ik1hYyIsImxhc3RBY2Nlc3MiOjAsIm1vYmlsZSI6ZmFsc2V9","AUTH_TIME":"1760707891","authenticators-completed":"{\\"7524f5ee-7d85-4ab5-9478-f5c7dd9d7408\\":1760707891}"},"state":"LOGGED_IN"}	1760707988	\N	1
 8460c54f-27c4-538b-47f2-9720561f667f	077a693b-dcd7-4395-a0d1-f2a5237cb9f9	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	1760708014	0	{"ipAddress":"192.168.65.1","authMethod":"openid-connect","rememberMe":false,"started":0,"notes":{"KC_DEVICE_NOTE":"eyJpcEFkZHJlc3MiOiIxOTIuMTY4LjY1LjEiLCJvcyI6Ik1hYyBPUyBYIiwib3NWZXJzaW9uIjoiMTAuMTUuNyIsImJyb3dzZXIiOiJDaHJvbWUvMTQxLjAuMCIsImRldmljZSI6Ik1hYyIsImxhc3RBY2Nlc3MiOjAsIm1vYmlsZSI6ZmFsc2V9","AUTH_TIME":"1760708014","authenticators-completed":"{\\"7524f5ee-7d85-4ab5-9478-f5c7dd9d7408\\":1760708014}"},"state":"LOGGED_IN"}	1760708014	\N	0
+cf24cb66-7408-c988-9171-8225baa56254	077a693b-dcd7-4395-a0d1-f2a5237cb9f9	17a1deaa-57e1-46fe-a0b9-1dbf7786ae0a	1761143229	0	{"ipAddress":"192.168.65.1","authMethod":"openid-connect","rememberMe":false,"started":0,"notes":{"KC_DEVICE_NOTE":"eyJpcEFkZHJlc3MiOiIxOTIuMTY4LjY1LjEiLCJvcyI6Ik1hYyBPUyBYIiwib3NWZXJzaW9uIjoiMTAuMTUuNyIsImJyb3dzZXIiOiJDaHJvbWUvMTQxLjAuMCIsImRldmljZSI6Ik1hYyIsImxhc3RBY2Nlc3MiOjAsIm1vYmlsZSI6ZmFsc2V9","AUTH_TIME":"1761143229","authenticators-completed":"{\\"7524f5ee-7d85-4ab5-9478-f5c7dd9d7408\\":1761143229,\\"9e0cf61f-c036-4cdf-af6e-1abe65b29c46\\":1761143495}"},"state":"LOGGED_IN"}	1761143496	\N	5
 \.
 
 
@@ -2737,6 +2759,7 @@ fdb23330-26e2-450f-9183-53f9ededdd52	/realms/master/account/*
 214a24a6-aca5-4974-852f-6ef4b07c7f8f	/realms/master/account/*
 9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be	/admin/master/console/*
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	*
+3bd14e5c-a020-4c16-8391-88a58a57d970	*
 \.
 
 
@@ -2993,6 +3016,7 @@ COPY public.user_role_mapping (role_id, user_id) FROM stdin;
 COPY public.web_origins (client_id, value) FROM stdin;
 9fbf0b0f-5eb3-4fd8-9bd3-5b4a14ddb8be	+
 e5ac5e77-0380-4734-9b8f-82e72c6205a0	*
+3bd14e5c-a020-4c16-8391-88a58a57d970	*
 \.
 
 

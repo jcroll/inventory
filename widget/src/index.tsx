@@ -7,9 +7,9 @@ import { AuthProvider } from "react-oidc-context";
 import {WebStorageStateStore} from "oidc-client-ts";
 
 const oidcConfig = {
-  authority: "http://localhost:8080/realms/master",
+  authority: "http://localhost:9090/realms/master",
   client_id: "inventory-widget",
-  redirect_uri: "http://localhost:3000",
+  redirect_uri: "http://localhost:9100",
   userStore: new WebStorageStateStore({ store: window.localStorage }),
 };
 

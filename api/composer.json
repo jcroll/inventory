@@ -8,6 +8,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "drenso/symfony-oidc-bundle": "^4.2",
+        "nelmio/cors-bundle": "^2.5",
         "symfony/console": "6.4.*",
         "symfony/dotenv": "6.4.*",
         "symfony/flex": "^2",

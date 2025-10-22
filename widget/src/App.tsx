@@ -30,7 +30,7 @@ function App() {
     }
 
     const token = auth.user?.access_token;
-    axios.get('http://localhost/api/inventory', {
+    axios.get('http://localhost:90/api/inventory', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -45,8 +45,8 @@ function App() {
   }, [auth]);
 
   return (
-    <div style={{padding: 20}}>
-      <h2>Inventory</h2>
+    <div style={{padding: 20, backgroundColor: 'white'}}>
+      <h3 style={{marginTop: 0}}>Inventory</h3>
 
       {auth.error && <p>Oops... {auth.error.name} caused {auth.error.message}</p>}
 
